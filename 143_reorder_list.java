@@ -42,8 +42,8 @@ class Solution {
     public ListNode findMid(ListNode node) {
         if(node == null || node.next == null) return node;
         ListNode slow = node;
-        ListNode fast = slow;
-        while(fast.next != null && fast.next.next != null) {
+        ListNode fast = slow.next; // middle to the left, fast = slow middle to the right
+        while(fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
